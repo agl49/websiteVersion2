@@ -10,8 +10,8 @@
   console.log(data);
 </script>
 
-<div in:fade={{ duration: 150, delay: 150 }} out:fade={{ duration: 150 }}>
-  <article class="markdown">
+<div class="markdown" in:fade={{ duration: 150, delay: 150 }} out:fade={{ duration: 150 }}>
+  <article>
     <h1>{data.title}</h1>
     <p>Published: {data.date}</p>
     <Content />
@@ -35,8 +35,8 @@
 
 <style>
   .markdown {
+    width: 550px;
     max-width: 550px;
-    text-align: center;
     text-align: left;
   }
 </style>

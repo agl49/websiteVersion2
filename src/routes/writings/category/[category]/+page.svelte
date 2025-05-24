@@ -24,7 +24,6 @@
 <style>
   .secondaryBlogMenu {
     width: 550px;
-    text-align: center;
     text-align: left;
   }
 </style>
