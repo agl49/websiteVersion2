@@ -41,13 +41,19 @@
     <!-- On markdown page, have it linked to demo if you execute the code live on -->
     <!-- this site or to external site. -->
     <h2>Contact</h2>
-    <p>You can reach out to me via linkedIn using the link below.</p>
+    <p>
+      You can reach out to me via linkedIn or by my email:
+      <a href="mailto:adrianglopez98@gmail.com">adrianglopez98@gmail.com</a>
+    </p>
   </div>
 </main>
 
 <style>
   .me {
-    max-width: 550px;
+    /* max-width: 550px; */
+    max-width: 100%;
+
+    /* padding-left: 33%; */
   }
   h2 {
     text-align: center;

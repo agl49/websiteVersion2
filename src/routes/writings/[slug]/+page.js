@@ -5,8 +5,8 @@ export async function load({ params }) {
   const { title, date, categories } = post.metadata;
   const content = post.default;
 
-  console.log('slug page');
-  console.log(post.metadata);
+  // console.log('slug page');
+  // console.log(post.metadata);
 
   return {
     content,

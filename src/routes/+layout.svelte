@@ -81,8 +81,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    padding: 0rem;
+    align-items: left;
+    padding-left: 35%;
+    padding-right: 35%;
     min-height: 100vh;
     color: white;
     z-index: 1;

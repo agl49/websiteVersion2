@@ -11,7 +11,7 @@
 
   function onChange(event) {
     $selectTag = event.target.value;
-    console.log('selectTag: ', $selectTag);
+    // console.log('selectTag: ', $selectTag);
   }
 
   let { children } = $props();
@@ -22,7 +22,7 @@
   <h3>Filter Posts By Tag</h3>
   <select class="typeMenu" onchange={onChange}>
     {#each options as option}
-      <option value={option}>{option}</option>
+      <option class="optionStyle" value={option}>{option}</option>
     {/each}
   </select>
 
@@ -31,7 +31,10 @@
 
 <style>
   .mainBlogMenu {
-    width: 550px;
+    /* width: 550px; */
+    max-width: 100%;
+    /* padding-right: 33%; */
+    /* padding-left: 33%; */
   }
   h2 {
     text-align: center;
@@ -45,5 +48,10 @@
     font-size: 1em;
     border: 0px solid #c4d1eb;
     border-radius: 1rem;
+  }
+
+  .optionStyle {
+    background-color: white;
+    color: black;
   }
 </style>

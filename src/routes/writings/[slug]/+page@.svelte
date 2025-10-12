@@ -6,8 +6,8 @@
 
   const Content = $derived(data.content);
 
-  console.log('page data');
-  console.log(data);
+  // console.log('page data');
+  // console.log(data);
 </script>
 
 <div class="markdown" in:fade={{ duration: 150, delay: 150 }} out:fade={{ duration: 150 }}>
@@ -35,8 +35,9 @@
 
 <style>
   .markdown {
-    width: 550px;
-    max-width: 550px;
+    /* width: 550px;
+    max-width: 550px; */
+    max-width: 100%;
     text-align: left;
   }
 </style>

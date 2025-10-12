@@ -39,7 +39,8 @@
 
 <style>
   .mainBlogMenu {
-    max-width: 550px;
+    /* max-width: 550px; */
+    max-width: 100%;
     text-align: left;
   }
 </style>
