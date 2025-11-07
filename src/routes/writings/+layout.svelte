@@ -1,10 +1,9 @@
 <script>
   import { categoryTags } from '$lib/constants';
   import { setContext } from 'svelte';
-  import { writable } from 'svelte/store';
   import { fade } from 'svelte/transition';
+  import { selectTag } from './tag_state';
 
-  const selectTag = writable('');
   setContext('selectedTag', selectTag);
 
   let options = $state(categoryTags);
@@ -20,7 +19,7 @@
 <div class="mainBlogMenu" in:fade={{ duration: 150, delay: 150 }} out:fade={{ duration: 150 }}>
   <h2>Posts</h2>
   <h3>Filter Posts By Tag</h3>
-  <select class="typeMenu" onchange={onChange}>
+  <select class="typeMenu" onchange={onChange} bind:value={$selectTag}>
     {#each options as option}
       <option class="optionStyle" value={option}>{option}</option>
     {/each}

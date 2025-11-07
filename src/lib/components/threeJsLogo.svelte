@@ -1,7 +1,6 @@
 <script>
   import { onMount, onDestroy } from 'svelte';
   import * as THREE from 'three';
-  import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
   let canvas;
   let renderer, scene, camera, sphere, octahedron, octahedron2, octahedron3;

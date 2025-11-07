@@ -1,10 +1,25 @@
 <script>
   import { fade } from 'svelte/transition';
   import { base } from '$app/paths';
+  import { getContext } from 'svelte';
+  import { goto } from '$app/navigation';
+  import { selectTag } from '../tag_state';
 
   let { data } = $props();
+  let selected = $state('');
 
   const Content = $derived(data.content);
+
+  function clickTag() {
+    //debugging
+    console.log('in category');
+    console.log(typeof $selectTag);
+    console.log('selected category is: ' + selected);
+    console.log('in tag buttong selectTag value: ' + $selectTag);
+
+    selectTag.set(selected);
+    goto(base + '/writings');
+  }
 
   // console.log('page data');
   // console.log(data);
@@ -23,9 +38,17 @@
       <ul>
         {#each data.categories as category}
           <li>
-            <a href="{base}/writings/category/{category}">
+            <!-- <a href="{base}/writings/category/{category}">
               {category}
-            </a>
+            </a> -->
+            <button
+              onclick={() => {
+                selected = category;
+                clickTag();
+              }}
+            >
+              {category}
+            </button>
           </li>
         {/each}
       </ul>

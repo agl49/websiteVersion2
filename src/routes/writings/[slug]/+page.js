@@ -16,7 +16,7 @@ export async function load({ params }) {
   };
 }
 
-/** @type {import('./$types').EntryGenerator} */
+// /** @type {import('./$types').EntryGenerator} */
 export function entries() {
   let posts = [];
 

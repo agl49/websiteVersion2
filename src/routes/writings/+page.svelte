@@ -2,16 +2,20 @@
   import { fade } from 'svelte/transition';
   import { getContext } from 'svelte';
   import { base } from '$app/paths';
+  import { selectTag } from './tag_state';
 
   let { data } = $props();
   let tag = $state('');
 
-  let selectedTag = getContext('selectedTag');
-  $effect(() => (tag = $selectedTag));
+  // let selectedTag = getContext('selectedTag');
+  $effect(() => (tag = $selectTag));
 
   let filteredPosts = $derived(
     data.posts.filter((post) => {
-      if ($selectedTag && post) {
+      // debugging
+      console.log('$selectedTag: ' + $selectTag);
+
+      if ($selectTag && post) {
         let temp = post.meta.categories;
         return temp.includes(tag);
       } else {
