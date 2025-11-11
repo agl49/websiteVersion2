@@ -58,8 +58,14 @@
 
 <ThreeJsLogo />
 
-{#if true}
-  <main>
+{#if !small.current}
+  <main class="largeMain">
+    <div>
+      {@render children()}
+    </div>
+  </main>
+{:else}
+  <main class="smallMain">
     <div>
       {@render children()}
     </div>
@@ -77,7 +83,7 @@
     font-family: 'Source Code Pro';
   }
 
-  main {
+  .largeMain {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -85,6 +91,18 @@
     padding-left: 35%;
     padding-right: 35%;
     min-height: 100vh;
+    color: white;
+    z-index: 1;
+  }
+
+  .smallMain {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+    padding-left: 15%;
+    padding-right: 15%;
+    min-height: 50vh;
     color: white;
     z-index: 1;
   }

@@ -11,18 +11,9 @@
   const Content = $derived(data.content);
 
   function clickTag() {
-    //debugging
-    console.log('in category');
-    console.log(typeof $selectTag);
-    console.log('selected category is: ' + selected);
-    console.log('in tag buttong selectTag value: ' + $selectTag);
-
     selectTag.set(selected);
     goto(base + '/writings');
   }
-
-  // console.log('page data');
-  // console.log(data);
 </script>
 
 <div class="markdown" in:fade={{ duration: 150, delay: 150 }} out:fade={{ duration: 150 }}>
@@ -42,6 +33,7 @@
               {category}
             </a> -->
             <button
+              class="tagbutton"
               onclick={() => {
                 selected = category;
                 clickTag();
@@ -62,5 +54,15 @@
     max-width: 550px; */
     max-width: 100%;
     text-align: left;
+  }
+
+  .tagbutton {
+    color: white;
+    background: rgba(255, 255, 255, 0);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
 </style>
